@@ -79,12 +79,11 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
                     'r') as infile:
               input_meta_data = json.load(infile)
 
-          # create workspace that is local to the user if it does not exist
+          # update workspace name in input.json files and write to work dir
           ws_id_t = Template(input_meta_data['params'][0]['ws_id'])
           cls.ws_id = ws_id_t.substitute(user_id=user_id)
           input_meta_data['params'][0]['ws_id'] = cls.ws_id
 
-          # write to scratch space
           with open('work/' + input_meta_data_file, 'w') as outfile:
               json.dump(input_meta_data, outfile)
 
@@ -93,7 +92,6 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
       # create workspace that is local to the user if it does not exist
       cls.ws = Workspace(url=ws_url, token=token, auth_svc=auth_service_url,
                          trust_all_ssl_certificates=auth_service_url_allow_insecure)
-
       try:
           ws_info = cls.ws.get_workspace_info({'workspace': cls.ws_id})
           print("workspace already exists: " + str(ws_info))
