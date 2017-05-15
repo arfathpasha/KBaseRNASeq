@@ -1,0 +1,22 @@
+{
+  "version": "1.1",
+  "method": "KBaseRNASeq.Hisat2Call",
+  "context": null,
+  "params": [
+    {
+      "ws_id": "KBaseRNASeq_test_$user_id",
+      "sampleset_id": "downsized_AT_reads",
+      "genome_id": "at_chrom1_section",
+      "alignment_type": "phred33",
+      "quality_score": null,
+      "min_intron_length": 20,
+      "maximum_intron_length": 500000,
+      "orientation": "fr",
+      "np": 1,
+      "minins": 0,
+      "tailor_alignments": "dta-cufflinks",
+      "maxins": 500
+    }
+  ]
+}
+
