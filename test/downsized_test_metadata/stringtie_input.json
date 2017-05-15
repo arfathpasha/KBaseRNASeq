@@ -6,12 +6,13 @@
     {
       "ws_id": "KBaseRNASeq_test_$user_id",
       "alignmentset_id": "downsized_AT_reads_hisat2_AlignmentSet",
-      "float min_isoform_abundance": 0.1,
+      "min_isoform_abundance": 0.1,
       "a_juncs": 10,
       "min_length": 200,
       "j_min_reads": 1,
-      "float c_min_read_coverage": 2.5,
-      "gap_sep_value": 50
+      "c_min_read_coverage": 2.5,
+      "gap_sep_value": 50,
+      "merge": 0
     }
   ]
 }

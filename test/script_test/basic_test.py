@@ -29,7 +29,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
       super(TestRNASeqMethodsSetupUserIndependent, cls).setUpClass()
-      
+
       print('_______BEGIN_TEST_SETUP_________')
       token = environ.get('KB_AUTH_TOKEN', None)
 
@@ -255,7 +255,6 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
                          alignment_set['data'][0]['info'][2],
                          "output alignment set object type did not match")
 
-
     def test_e_stringtie(self):
         print("\n\n----------- test Stringtie ----------")
 
@@ -280,7 +279,6 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
         self.assertEqual('KBaseRNASeq.RNASeqExpressionSet-6.0',
                          expression_set['data'][0]['info'][2],
                          "output expression set object type did not match")
-
 
 
     def test_f_cufflinks(self):
@@ -331,11 +329,10 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
                          differential_expression['data'][0]['info'][2],
                          "output differential expression object type did not match")
 
-    '''
-    def test_ballgown(self):
+
+    def test_h_ballgown(self):
         print("\n\n----------- test DiffExpCallforBallgown ----------")
 
-        self.test_stringtie()
         out = call(["run_KBaseRNASeq.sh",
                     "work/ballgown_input.json",
                     "work/ballgown_output.json",
@@ -355,7 +352,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
         #self.assertEqual('KBaseRNASeq.RNASeqDifferentialExpression-5.0',
         #                 differential_expression['data'][0]['info'][2],
         #                 "output differential expression object type did not match")
-    '''
+
 
 '''
 # These tests use private workspaces that is accessible by 'kbasetest' user
