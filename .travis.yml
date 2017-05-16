@@ -56,7 +56,7 @@ install:
     # add test config
     #- sed -i "s/test_user=/test_user=$TEST_USER/" test_local/test.cfg
     #- sed -i "s/test_password=/test_password=$TEST_PASSWORD/" test_local/test.cfg
-    - sed -i "s/test_token=/test_token=$TEST_TOKEN/" test_local/test.cfg
+    - sed -i "s/test_token=/test_token=xxx$TEST_TOKEN/" test_local/test.cfg
     #- sed -i 's\https://appdev.kbase.us/services\https://ci.kbase.us/services\' test_local/test.cfg
     #- sed -i 's\https://appdev.kbase.us/services/auth/api/legacy/KBase/Sessions/Login\https://ci.kbase.us/services/auth/api/legacy/KBase/Sessions/Login\' test_local/test.cfg
     # temporary fix for host::container user mapping (until it is fixed in kb-sdk)
