@@ -1,9 +1,13 @@
+[run]
+omit =
+    # omit everything in local lib dirs anywhere
+    /usr/local/*
+    # omit everything in test dirs
+    test/*
+    test_local/*
 
 [report]
-exclude_lines = 
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    # Have to re-enable the standard pragma
     pragma: no cover
-    pass
-
-[run]
-source = 
-    biokbase.RNASeq
