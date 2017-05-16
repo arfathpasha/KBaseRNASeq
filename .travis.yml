@@ -49,7 +49,7 @@ install:
     - docker images
     - export PATH=$(pwd)/bin:$PATH
     - cd ../
-    - git https://github.com/arfathpasha/KBaseRNASeq.git -b travis_ci
+    - git clone https://github.com/arfathpasha/KBaseRNASeq.git -b travis_ci
     - cd KBaseRNASeq
     # run the kb-sdk test command once to build test_local dir and populate the .ignore files
     - kb-sdk test -s || true
