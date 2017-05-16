@@ -155,7 +155,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
 
       print('_______END_TEST_SETUP_________')
 
-     
+
     def test_a_build_bowtie2_index(self):
           print("\n\n----------- test BuildBowtie2index ----------")
 
