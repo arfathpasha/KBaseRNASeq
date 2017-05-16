@@ -12,7 +12,9 @@
       "j_min_reads": 1,
       "c_min_read_coverage": 2.5,
       "gap_sep_value": 50,
-      "merge": 0
+      "merge": 0,
+      "skip_reads_with_no_ref": 1,
+      "ballgown_mode" : 1
     }
   ]
 }

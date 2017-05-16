@@ -21,9 +21,10 @@ import os
 
 class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
     '''
-    These tests setup a private workspace for the user running the tests, upload
-    the necessary data and then run the tests. i.e. The tests have been set up
-    to be independent of the user running the tests.
+    These tests set up a private workspace for the user that is running the 
+    tests. The test data is uploaded to the workspace and shock before the
+    tests are executed. This allows any user (with a valid test_token) to run 
+    the tests.
     '''
 
     @classmethod
@@ -154,7 +155,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
 
       print('_______END_TEST_SETUP_________')
 
-
+     
     def test_a_build_bowtie2_index(self):
           print("\n\n----------- test BuildBowtie2index ----------")
 
@@ -175,7 +176,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
                                                 'did not find output index file')
           self.assertEqual(9078678, os.path.getsize("work/at_chrom1_section_index.zip"),
                                                 'output index file size did not match')
-
+    
 
     def test_b_CreateRNASeqSampleSet(self):
         print("\n\n----------- test CreateRNASeqSampleSet ----------")
@@ -278,7 +279,6 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
                          expression_set['data'][0]['info'][2],
                          "output expression set object type did not match")
 
-
     def test_f_cufflinks(self):
         print("\n\n----------- test CufflinksCall ----------")
 
@@ -303,7 +303,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
         self.assertEqual('KBaseRNASeq.RNASeqExpressionSet-6.0',
                          expression_set['data'][0]['info'][2],
                          "output expression set object type did not match")
-                         
+
 
     def test_g_cuffdiff(self):
         print("\n\n----------- test CuffdiffCall ----------")
@@ -326,7 +326,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
         self.assertEqual('KBaseRNASeq.RNASeqDifferentialExpression-5.0',
                          differential_expression['data'][0]['info'][2],
                          "output differential expression object type did not match")
-
+    '''
 
     def test_h_ballgown(self):
         print("\n\n----------- test DiffExpCallforBallgown ----------")
@@ -346,10 +346,10 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
         differential_expression = self.__class__.ws.get_objects2({'objects': [
             {'workspace': self.__class__.ws_id,
              'name': output['result'][0]['output']}]})
-        print('>>>>>>>>>>>>>'+str(differential_expression))
-        #self.assertEqual('KBaseRNASeq.RNASeqDifferentialExpression-5.0',
-        #                 differential_expression['data'][0]['info'][2],
-        #                 "output differential expression object type did not match")
+        self.assertEqual('KBaseRNASeq.RNASeqDifferentialExpression-5.0',
+                         differential_expression['data'][0]['info'][2],
+                         "output differential expression object type did not match")
+
 
 
 '''
