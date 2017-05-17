@@ -101,7 +101,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
               {'workspace': cls.ws_id, 'description': 'Workspace for ' + str(
                   input_meta_data['method'])})
           print("Created new workspace: " + str(ws_info))
-
+      '''
       # upload genbank file
       print('uploading input data to workspace...')
       INPUT_DATA_DIR = "/kb/module/test/downsized_test_data/"
@@ -154,6 +154,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
           print('reads upload save result: '+str(result))
 
       print('_______END_TEST_SETUP_________')
+      '''
 
 
     def test_a_build_bowtie2_index(self):
@@ -200,7 +201,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
         self.assertEqual('KBaseRNASeq.RNASeqSampleSet-4.0', reads['data'][0]['info'][2],
                                          "output sampleset object type did not match")
 
-
+    '''
     def test_c_hisat2(self):
         print("\n\n----------- test HiSat2 ----------")
 
@@ -349,6 +350,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
         self.assertEqual('KBaseRNASeq.RNASeqDifferentialExpression-5.0',
                          differential_expression['data'][0]['info'][2],
                          "output differential expression object type did not match")
+    '''
 
 
 
