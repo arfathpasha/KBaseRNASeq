@@ -114,26 +114,23 @@ deploy-service-scripts:
 deploy-cfg:
 	@echo "Generating real deployment.cfg based on template"
 
-test: test-impl create-test-wrapper
+#test: test-impl create-test-wrapper
 
 
-test-impl: create-test-wrapper
-	./test/script_test/run_tests.sh
-	coverage report -m
-	cp .coverage work/
-	mkdir -p work/kb/deployment/lib
-	cp -R /kb/deployment/lib/biokbase work/kb/deployment/lib
+#test-impl: create-test-wrapper
+#	./test/script_test/run_tests.sh
 
-create-test-wrapper:
-	@echo "Creating test script wrapper in test/script_test"
-	echo '#!/bin/bash' > test/script_test/run_tests.sh
-	echo 'export KB_RUNTIME=$(DEPLOY_RUNTIME)' >> $(TARGET)/bin/$(EXECUTABLE_SCRIPT_NAME) >> test/script_test/run_tests.sh
-	echo 'export PYTHONPATH="$(DIR)/$(LIB_DIR)"' >> test/script_test/run_tests.sh
-	echo 'export KB_DEPLOYMENT_CONFIG="$(DIR)/deploy.cfg"' >> test/script_test/run_tests.sh
-	echo 'python $(DIR)/test/script_test/basic_test.py $$1 $$2 $$3' \
-		>> test/script_test/run_tests.sh
-	chmod +x test/script_test/run_tests.sh
-	chmod 777 deploy.cfg
+
+#create-test-wrapper:
+#	@echo "Creating test script wrapper in test/script_test"
+#	echo '#!/bin/bash' > test/script_test/run_tests.sh
+#	echo 'export KB_RUNTIME=$(DEPLOY_RUNTIME)' >> $(TARGET)/bin/$(EXECUTABLE_SCRIPT_NAME) >> test/script_test/run_tests.sh
+#	echo 'export PYTHONPATH="$(DIR)/$(LIB_DIR)"' >> test/script_test/run_tests.sh
+#	echo 'export KB_DEPLOYMENT_CONFIG="$(DIR)/deploy.cfg"' >> test/script_test/run_tests.sh
+#	echo 'python $(DIR)/test/script_test/basic_test.py $$1 $$2 $$3' \
+#		>> test/script_test/run_tests.sh
+#	chmod +x test/script_test/run_tests.sh
+#	chmod 777 deploy.cfg
 
 else
 ####
@@ -189,10 +186,14 @@ deploy-service-scripts:
 #	@echo "TODO: Generating real deployment.cfg based on template"
 
 #test: deploy test-impl create-test-wrapper 
-#test: test-impl create-test-wrapper
+test: test-impl create-test-wrapper
 
 test-impl: create-test-wrapper
 	./test/script_test/run_tests.sh
+	coverage report -m
+	cp .coverage work/
+	mkdir -p work/kb/deployment/lib
+	cp -R /kb/deployment/lib/biokbase work/kb/deployment/lib
 
 create-test-wrapper:
 	@echo "Creating test script wrapper in test/script_test"
@@ -204,6 +205,7 @@ create-test-wrapper:
 	echo 'python $(DIR)/test/script_test/basic_test.py $$1 $$2 $$3' \
 		>> test/script_test/run_tests.sh
 	chmod +x test/script_test/run_tests.sh
+	chmod 777 deploy.cfg
 
 endif
 
