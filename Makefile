@@ -129,6 +129,7 @@ create-test-wrapper:
 	echo 'python $(DIR)/test/script_test/basic_test.py $$1 $$2 $$3' \
 		>> test/script_test/run_tests.sh
 	chmod +x test/script_test/run_tests.sh
+	chmod 777 deploy.cfg
 
 else
 ####
@@ -184,7 +185,7 @@ deploy-service-scripts:
 #	@echo "TODO: Generating real deployment.cfg based on template"
 
 #test: deploy test-impl create-test-wrapper 
-test: test-impl create-test-wrapper
+#test: test-impl create-test-wrapper
 
 test-impl: create-test-wrapper
 	./test/script_test/run_tests.sh
