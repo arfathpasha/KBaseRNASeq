@@ -3,6 +3,7 @@ MAINTAINER KBase Developer
 # Install the SDK (should go away eventually)
 RUN pip install --upgrade virtualenv
 RUN pip install --upgrade setuptools
+RUN python -c "import packaging.version"
 RUN \
   . /kb/dev_container/user-env.sh && \
   cd /kb/dev_container/modules && \
