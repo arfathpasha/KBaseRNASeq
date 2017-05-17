@@ -39,6 +39,7 @@ before_install:
     - java -version
 
 install:
+    - sudo apt-get install python-pip
     - pip install coveralls
     - pip install coverage
     - git clone https://github.com/kbase/jars
