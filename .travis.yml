@@ -41,7 +41,7 @@ before_install:
 install:
     - pip install --upgrade pip
     #- sudo apt-get install python-pip
-    #- pip install setuptools
+    - pip install setuptools
     - pip install coveralls
     - pip install coverage
     - git clone https://github.com/kbase/jars
