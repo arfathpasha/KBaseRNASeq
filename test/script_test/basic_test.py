@@ -326,7 +326,7 @@ class TestRNASeqMethodsSetupUserIndependent(unittest.TestCase):
         self.assertEqual('KBaseRNASeq.RNASeqDifferentialExpression-5.0',
                          differential_expression['data'][0]['info'][2],
                          "output differential expression object type did not match")
-    '''
+
 
     def test_h_ballgown(self):
         print("\n\n----------- test DiffExpCallforBallgown ----------")
