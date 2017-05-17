@@ -36,7 +36,7 @@ before_install:
     - docker version
     - python --version
     - javac -version
-    - java -versionsecure: "OsUARARANyFeBvZhlG769tMV4ZlW374qTeBAzsm99syB6ZLcgkA95eEWFQrC12IciWmChFCkjoA3D01heQxWKoVTvs74ieo1Ig+OmjbOQYSezQD0dbanHSCNmtMtn5QvsTo6RXx8+DZFAMx8Ctkd8+qkaQyEWhzrskhGMHCt8kJchvVtfaD9TZ/LXTPIlXXMdCoWsbUEqHn+Sci5zM7yStqrVW+hrerlpvfQw/FiCCkWXap9KHQjy7MClKZOYzXQfum+Bntni/qhK7hfedt6x3loQLZzdMfFsMqLuwuuH9SamjYVL27RFTAUwPqes9tVKcwG6SNpOECEcpJF2IxJ68+rLngG1q0lS4HvKud2GvIpU2ONr9xv9UowZzs4zQHCWtDWK9lMTAVfpio7byJyotPRBlDYGUSzV7sUHdRmkh503TMhHZ376wne/5nSOjgQoj+Hm4gikkWzWv6M9nU/7+Q3vitAyyAF6018V8R8xS/lAzFS2hYHLnNKwGlUjmjnhhl4Iu4nc5ihgxtFL0zEMJOu7fygfbHmYEoIjU8PtSjMc6JktQf3oWmeFxuXjidiz4cPVfZItShJR+uyb8x/4W2JivLIJFLxmugKWx+giQ6RiyLKlyhJhmxpB2hMNuygkJpJcsSRhcB+UVHwexoLfPoejlkwKNOu/vj+31KUYJo="
+    - java -version
 
 install:
     - pip install coveralls
