@@ -2,7 +2,7 @@ FROM kbase/kbase:sdkbase.latest
 MAINTAINER KBase Developer
 # Install the SDK (should go away eventually)
 RUN pip install --upgrade virtualenv
-RUN pip install setuptools
+RUN pip install --upgrade setuptools
 RUN \
   . /kb/dev_container/user-env.sh && \
   cd /kb/dev_container/modules && \
