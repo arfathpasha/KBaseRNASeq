@@ -39,9 +39,6 @@ before_install:
     - java -version
 
 install:
-    #- pip install --upgrade pip
-    #- sudo apt-get install python-pip
-    #- pip install --upgrade setuptools
     - pip install coveralls
     - pip install coverage
     - git clone https://github.com/kbase/jars
