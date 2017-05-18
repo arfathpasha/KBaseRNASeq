@@ -51,7 +51,7 @@ install:
     - cd ../
     - git clone https://github.com/arfathpasha/KBaseRNASeq.git -b travis_ci
     - cd KBaseRNASeq
-    # run the kb-sdk test command once to build test_local dir and populate the .ignore files
+    # run the kb-sdk test command to build test_local dir and populate the .ignore files
     - kb-sdk test -s || true
     # add test config
     #- sed -i "s/test_user=/test_user=$TEST_USER/" test_local/test.cfg
@@ -61,8 +61,10 @@ install:
     - sed -i 's\https://appdev.kbase.us/services/auth/api/legacy/KBase/Sessions/Login\https://ci.kbase.us/services/auth/api/legacy/KBase/Sessions/Login\' test_local/test.cfg
     # temporary fix for host::container user mapping (until it is fixed in kb-sdk or a better solution figured out)
     - sed -i 's/$(id -u)/0:0/' test_local/run_tests.sh
+    # run the kb-sdk test command to build generate the run_subjob.sh script
+    - kb-sdk test -s || true
     - sed -i 's/$(id -u)/0:0/' test_local/run_subjob.sh
-    - ls test_local
+    - cat test_local/run_subjob.sh
 
 script:
     - kb-sdk test
