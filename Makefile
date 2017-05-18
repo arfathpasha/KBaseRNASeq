@@ -117,7 +117,6 @@ test: test-impl create-test-wrapper
 
 
 test-impl: create-test-wrapper
-	@echo "came here1: $(TOP_DIR_NAME)"
 	./test/script_test/run_tests.sh
 	coverage report -m
 	cp .coverage work/
@@ -193,7 +192,6 @@ deploy-service-scripts:
 test: test-impl create-test-wrapper
 
 test-impl: create-test-wrapper
-	@echo "came here2: $(TOP_DIR_NAME)"
 	./test/script_test/run_tests.sh
 	coverage report -m
 	cp .coverage work/
@@ -207,7 +205,7 @@ create-test-wrapper:
 	echo 'export PYTHONPATH="$(TARGET)/lib"' >> test/script_test/run_tests.sh
 	echo 'export KB_SERVICE_NAME="$(MODULE_CAPS)"' >> test/script_test/run_tests.sh
 	echo 'export KB_DEPLOYMENT_CONFIG="$(DIR)/deploy.cfg"' >> test/script_test/run_tests.sh
-	echo 'python $(DIR)/test/script_test/basic_test.py $$1 $$2 $$3' \
+	echo 'coverage run $(DIR)/test/script_test/basic_test.py $$1 $$2 $$3' \
 		>> test/script_test/run_tests.sh
 	chmod +x test/script_test/run_tests.sh
 	chmod 777 deploy.cfg
