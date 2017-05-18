@@ -61,7 +61,8 @@ install:
     - sed -i 's\https://appdev.kbase.us/services/auth/api/legacy/KBase/Sessions/Login\https://ci.kbase.us/services/auth/api/legacy/KBase/Sessions/Login\' test_local/test.cfg
     # temporary fix for host::container user mapping (until it is fixed in kb-sdk or a better solution figured out)
     - sed -i 's/$(id -u)/0:0/' test_local/run_tests.sh
-    - cat test_local/run_tests.sh
+    - sed -i 's/$(id -u)/0:0/' test_local/run_subjob.sh
+    - ls test_local
 
 script:
     - kb-sdk test
