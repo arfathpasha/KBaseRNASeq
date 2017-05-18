@@ -74,7 +74,6 @@ clean:
 ifeq ($(TOP_DIR_NAME), dev_container)
 include $(TOP_DIR)/tools/Makefile.common
 include $(TOP_DIR)/tools/Makefile.common.rules
-
 DEPLOY_RUNTIME ?= /kb/runtime
 TARGET ?= /kb/deployment
 #SERVICE_DIR ?= $(TARGET)/services/$(MODULE)
@@ -118,6 +117,7 @@ test: test-impl create-test-wrapper
 
 
 test-impl: create-test-wrapper
+	@echo "came here1: $(TOP_DIR_NAME)"
 	./test/script_test/run_tests.sh
 	coverage report -m
 	cp .coverage work/
@@ -193,6 +193,7 @@ deploy-service-scripts:
 test: test-impl create-test-wrapper
 
 test-impl: create-test-wrapper
+	@echo "came here2: $(TOP_DIR_NAME)"
 	./test/script_test/run_tests.sh
 	coverage report -m
 	cp .coverage work/
