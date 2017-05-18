@@ -64,7 +64,6 @@ install:
     # run the kb-sdk test command to build generate the run_subjob.sh script
     - kb-sdk test -s || true
     - sed -i 's/$(id -u)/0:0/' test_local/run_subjob.sh
-    - cat test_local/run_subjob.sh
 
 script:
     - kb-sdk test

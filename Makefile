@@ -205,7 +205,7 @@ create-test-wrapper:
 	echo 'export PYTHONPATH="$(TARGET)/lib"' >> test/script_test/run_tests.sh
 	echo 'export KB_SERVICE_NAME="$(MODULE_CAPS)"' >> test/script_test/run_tests.sh
 	echo 'export KB_DEPLOYMENT_CONFIG="$(DIR)/deploy.cfg"' >> test/script_test/run_tests.sh
-	echo 'coverage run $(DIR)/test/script_test/basic_test.py $$1 $$2 $$3' \
+	echo 'coverage run --branch $(DIR)/test/script_test/basic_test.py $$1 $$2 $$3' \
 		>> test/script_test/run_tests.sh
 	chmod +x test/script_test/run_tests.sh
 	chmod 777 deploy.cfg

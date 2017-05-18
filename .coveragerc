@@ -1,4 +1,7 @@
 [run]
+source =
+	/kb/deployment/lib/biokbase/RNASeq
+
 omit =
     # omit everything in local lib dirs anywhere
     /usr/local/*
